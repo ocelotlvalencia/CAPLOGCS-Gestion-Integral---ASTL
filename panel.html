@@ -17,6 +17,7 @@
     <header class="header-actividades">
       <img src="./images/Logo_CapSF.png" alt="Logo" class="header-logo" />
       <span class="header-actividades-title">Panel</span>
+      <span class="header-assign-icon" title="Asignar actividades">📝</span>
       <span class="header-logout-icon" title="Cerrar sesión">🚪</span>
     </header>
     <main class="panel-main">
@@ -48,15 +49,79 @@
             </tbody>
           </table>
         </div>
-        <div class="panel-tab-content" id="areas-content" style="display:none;"></div>
-        <div class="panel-tab-content" id="permisos-content" style="display:none;"></div>
-        <div class="panel-tab-content" id="bd-content" style="display:none;"></div>
+        <div class="panel-tab-content hidden" id="areas-content">
+          <table class="tabla-areas">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Encargado</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar filas de ejemplo o dinámicas -->
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-tab-content hidden" id="permisos-content">
+          <div class="permisos-grid">
+            <div class="permiso-card">
+              <h3 class="permiso-title">Evento</h3>
+              <div class="permiso-sub">Selecciona que área tiene permiso de acceder</div>
+              <div class="permiso-areas">
+                <select id="select-evento-area" class="assign-select"></select>
+              </div>
+            </div>
+            <div class="permiso-card">
+              <h3 class="permiso-title">Limpieza</h3>
+              <div class="permiso-sub">Selecciona que área tiene permiso de acceder</div>
+              <div class="permiso-areas">
+                <select id="select-limpieza-area" class="assign-select"></select>
+              </div>
+            </div>
+            <div class="permiso-card">
+              <h3 class="permiso-title">Panel</h3>
+              <div class="permiso-sub">Selecciona que área tiene permiso de acceder</div>
+              <div class="permiso-areas">
+                <select id="select-panel-area" class="assign-select"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-tab-content hidden" id="bd-content"></div>
       </div>
-      <!-- Aquí puedes agregar el contenido específico del panel -->
     </main>
     <footer class="footer-caplogs">
       <span>© 2026 CAPLOGCS. Todos los derechos reservados.</span>
     </footer>
+    <!-- Modal Asignar Actividades -->
+    <div class="modal-assign hidden" id="modal-assign">
+      <div class="modal-content assign-modal-content">
+        <span class="close-modal" id="close-assign-modal">×</span>
+        <h2>Asignar actividades</h2>
+        <label for="seccion-select">¿En qué sección lo quieres poner?</label>
+        <select id="seccion-select" class="assign-select">
+          <option value="evento">Evento</option>
+          <option value="limpieza">Limpieza</option>
+        </select>
+        <button class="assign-btn">Continuar</button>
+        <form id="form-limpieza" class="form-limpieza hidden" autocomplete="off">
+          <label for="area-limpieza">Área</label>
+          <select id="area-limpieza" class="assign-select"></select>
+          <label for="encargado-limpieza">Encargado</label>
+          <input type="text" id="encargado-limpieza" class="assign-select" placeholder="Nombre del encargado" required />
+          <label for="actividad-limpieza">Actividades a realizar</label>
+          <input type="text" id="actividad-limpieza" class="assign-select" placeholder="Descripción de la actividad" required />
+          <label for="fecha-limpieza">Fecha</label>
+          <input type="date" id="fecha-limpieza" class="assign-select" required />
+          <label for="hora-limpieza">Hora</label>
+          <input type="time" id="hora-limpieza" class="assign-select" required />
+          <button type="submit" class="assign-btn">Crear actividad</button>
+        </form>
+      </div>
+    </div>
   </body>
   <script src="./renderer.js"></script>
 </html>
