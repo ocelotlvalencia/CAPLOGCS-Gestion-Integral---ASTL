@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Panel | CAPLOGCS</title>
+  </head>
+  <body>
+    <header class="header-actividades">
+      <img src="./images/Logo_CapSF.png" alt="Logo" class="header-logo" />
+      <span class="header-actividades-title">Panel</span>
+      <span class="header-logout-icon" title="Cerrar sesión">🚪</span>
+    </header>
+    <main class="panel-main">
+      <div class="panel-tabs-spacer"></div>
+      <div class="panel-tabs-section">
+        <nav class="panel-tabs">
+          <button class="panel-tab active">Integrantes</button>
+          <button class="panel-tab">Áreas</button>
+          <button class="panel-tab">Permisos</button>
+          <button class="panel-tab">Base de datos</button>
+        </nav>
+        <div class="panel-tab-content" id="integrantes-content">
+          <table class="tabla-integrantes">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Semestre</th>
+                <th>Carrera</th>
+                <th>Celular</th>
+                <th>Correo Institucional</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar filas de ejemplo o dinámicas -->
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-tab-content" id="areas-content" style="display:none;"></div>
+        <div class="panel-tab-content" id="permisos-content" style="display:none;"></div>
+        <div class="panel-tab-content" id="bd-content" style="display:none;"></div>
+      </div>
+      <!-- Aquí puedes agregar el contenido específico del panel -->
+    </main>
+    <footer class="footer-caplogs">
+      <span>© 2026 CAPLOGCS. Todos los derechos reservados.</span>
+    </footer>
+  </body>
+  <script src="./renderer.js"></script>
+</html>

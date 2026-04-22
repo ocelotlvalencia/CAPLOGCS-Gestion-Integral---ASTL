@@ -76,4 +76,33 @@ window.addEventListener('DOMContentLoaded', () => {
 			window.location.href = 'dashboard.html';
 		});
 	}
+
+	// Tabs en panel.html
+	const panelTabs = document.querySelectorAll('.panel-tab');
+	if (panelTabs.length > 0) {
+		// Siempre seleccionar Integrantes por defecto y mostrar solo su contenido
+		const tabContents = [
+			document.getElementById('integrantes-content'),
+			document.getElementById('areas-content'),
+			document.getElementById('permisos-content'),
+			document.getElementById('bd-content')
+		];
+		panelTabs.forEach((tab, idx) => {
+			if (idx === 0) {
+				tab.classList.add('active');
+				if (tabContents[idx]) tabContents[idx].style.display = '';
+			} else {
+				tab.classList.remove('active');
+				if (tabContents[idx]) tabContents[idx].style.display = 'none';
+			}
+			tab.addEventListener('click', () => {
+				panelTabs.forEach((t, i) => {
+					t.classList.remove('active');
+					if (tabContents[i]) tabContents[i].style.display = 'none';
+				});
+				tab.classList.add('active');
+				if (tabContents[idx]) tabContents[idx].style.display = '';
+			});
+		});
+	}
 });
