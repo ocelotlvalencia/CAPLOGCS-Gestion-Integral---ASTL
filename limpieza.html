@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <link rel="stylesheet" href="./styles.css" />
-
+    <link rel="stylesheet" href="./styles.css" />
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
@@ -12,23 +11,36 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Dashboard | CAPLOGCS</title>
+    <title>Limpieza | CAPLOGCS</title>
   </head>
   <body>
     <header class="header-actividades">
       <img src="./images/Logo_CapSF.png" alt="Logo" class="header-logo" />
-      <span class="header-actividades-title">Actividades</span>
+      <span class="header-actividades-title">Limpieza</span>
       <span class="header-login-icon" title="Iniciar sesión">🔑</span>
     </header>
-    <main class="mosaico-container">
-      <button class="mosaico-btn" id="eventos-btn">
-        <span class="mosaico-icon">🎉</span>
-        <span class="mosaico-title">Eventos</span>
-      </button>
-      <button class="mosaico-btn" id="limpieza-btn">
-        <span class="mosaico-icon">🧹</span>
-        <span class="mosaico-title">Limpieza</span>
-      </button>
+    <main class="limpieza-main">
+      <h2>Bienvenido a la sección de Limpieza</h2>
+      <button class="volver-btn" id="volver-dashboard">← Volver</button>
+      <div class="seccion-tabla-limpieza">
+        <table class="tabla-limpieza">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Área</th>
+            <th>Encargado</th>
+            <th>Actividades</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Evidencia Antes</th>
+            <th>Evidencia Después</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de fila, puedes eliminar o reemplazar -->
+        </tbody>
+        </table>
+      </div>
     </main>
     <footer class="footer-caplogs">
       <span>© 2026 CAPLOGCS. Todos los derechos reservados.</span>
