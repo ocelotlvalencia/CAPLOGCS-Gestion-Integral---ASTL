@@ -6,8 +6,8 @@ const createWindow = () => {
     height: 600
   })
 
-  //win.loadFile('dashboard.html')
-  win.loadFile('panel.html')
+  win.loadFile('dashboard.html')
+  //win.loadFile('panel.html')
 }
 
 app.whenReady().then(() => {

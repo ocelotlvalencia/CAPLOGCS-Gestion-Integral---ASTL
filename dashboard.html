@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="default-src 'self'; script-src 'self'; connect-src 'self' http://localhost:3001;"
     />
     <meta
       http-equiv="X-Content-Security-Policy"
@@ -31,7 +31,7 @@
       </button>
     </main>
     <footer class="footer-caplogs">
-      <span>© 2026 CAPLOGCS. Todos los derechos reservados.</span>
+      <span>© 2026 CAPLOGCS. Todos los derechos reservados. V.01</span>
     </footer>
     <div id="login-modal" class="modal-login hidden">
       <div class="modal-content login-modal-content">
@@ -50,6 +50,6 @@
         </form>
       </div>
     </div>
-  </body>
-  <script src="./renderer.js"></script>
-</html>
+    <script src="./renderer.js"></script>
+    </body>
+  </html>

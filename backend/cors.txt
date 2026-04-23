@@ -1,0 +1,12 @@
+# Para habilitar CORS en tu backend Express, agrega estas líneas al inicio de backend/login.js:
+
+const cors = require('cors');
+app.use(cors());
+
+# Instala el paquete si no lo tienes:
+npm install cors
+
+# Luego reinicia tu backend:
+node backend/login.js
+
+Esto permitirá que tu frontend (en otro puerto) pueda hacer peticiones al backend sin error de conexión.

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
+      content="default-src 'self'; script-src 'self'; connect-src 'self' http://localhost:3001;"
     />
     <meta
       http-equiv="X-Content-Security-Policy"
@@ -30,6 +30,9 @@
           <button class="panel-tab">Base de datos</button>
         </nav>
         <div class="panel-tab-content" id="integrantes-content">
+          <div class="nuevo-integrante-btn-wrapper">
+            <button id="btn-nuevo-integrante" class="nuevo-integrante-btn">Nuevo Integrante</button>
+          </div>
           <table class="tabla-integrantes">
             <thead>
               <tr>
@@ -50,6 +53,9 @@
           </table>
         </div>
         <div class="panel-tab-content hidden" id="areas-content">
+          <div class="nueva-area-btn-wrapper">
+            <button id="btn-nueva-area" class="nuevo-integrante-btn">Nueva Área</button>
+          </div>
           <table class="tabla-areas">
             <thead>
               <tr>
@@ -94,8 +100,91 @@
       </div>
     </main>
     <footer class="footer-caplogs">
-      <span>© 2026 CAPLOGCS. Todos los derechos reservados.</span>
+      <span>© 2026 CAPLOGCS. Todos los derechos reservados. V.01</span>
     </footer>
+    <!-- Modal Nueva Área -->
+    <div class="modal-nueva-area hidden" id="modal-nueva-area">
+      <div class="modal-content nuevo-integrante-modal-content">
+        <span class="close-modal" id="close-nueva-area-modal">×</span>
+        <h2>Nueva Área</h2>
+        <form id="form-nueva-area" class="form-nuevo-integrante" autocomplete="off">
+          <div class="form-nuevo-row">
+            <div class="form-nuevo-col">
+              <label for="nueva-area-nombre">Nombre</label>
+              <input type="text" id="nueva-area-nombre" required />
+            </div>
+            <div class="form-nuevo-col">
+              <label for="nueva-area-encargado">Encargado</label>
+              <select id="nueva-area-encargado" required>
+                <option value="">Selecciona un integrante</option>
+                <!-- Opciones dinámicas en integración -->
+              </select>
+            </div>
+          </div>
+          <div class="form-nuevo-row">
+            <div class="form-nuevo-col ancho-100">
+              <label for="nueva-area-descripcion">Descripción</label>
+              <textarea id="nueva-area-descripcion" rows="2" class="textarea-nueva-area" required></textarea>
+            </div>
+          </div>
+          <div class="form-nuevo-row">
+            <div class="form-nuevo-col">
+              <button type="submit" class="assign-btn">Guardar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+        <!-- Modal Nuevo Integrante -->
+        <div class="modal-nuevo-integrante hidden" id="modal-nuevo-integrante">
+          <div class="modal-content nuevo-integrante-modal-content">
+            <span class="close-modal" id="close-nuevo-integrante-modal">×</span>
+            <h2>Nuevo Integrante</h2>
+            <form id="form-nuevo-integrante" class="form-nuevo-integrante" autocomplete="off">
+              <div class="form-nuevo-row">
+                <div class="form-nuevo-col">
+                  <label for="nuevo-nombre">Nombre</label>
+                  <input type="text" id="nuevo-nombre" required />
+                </div>
+                <div class="form-nuevo-col">
+                  <label for="nuevo-apellido1">Primer Apellido</label>
+                  <input type="text" id="nuevo-apellido1" required />
+                </div>
+              </div>
+              <div class="form-nuevo-row">
+                <div class="form-nuevo-col">
+                  <label for="nuevo-apellido2">Segundo Apellido</label>
+                  <input type="text" id="nuevo-apellido2" required />
+                </div>
+                <div class="form-nuevo-col">
+                  <label for="nuevo-semestre">Semestre</label>
+                  <input type="text" id="nuevo-semestre" required />
+                </div>
+              </div>
+              <div class="form-nuevo-row">
+                <div class="form-nuevo-col">
+                  <label for="nuevo-carrera">Carrera</label>
+                  <input type="text" id="nuevo-carrera" required />
+                </div>
+                <div class="form-nuevo-col">
+                  <label for="nuevo-celular">Celular</label>
+                  <input type="tel" id="nuevo-celular" required />
+                </div>
+              </div>
+              <div class="form-nuevo-row">
+                <div class="form-nuevo-col">
+                  <label for="nuevo-correo">Correo Institucional</label>
+                  <input type="email" id="nuevo-correo" required />
+                </div>
+              </div>
+              <div class="form-nuevo-row">
+                <div class="form-nuevo-col">
+                  <button type="submit" class="assign-btn">Guardar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
     <!-- Modal Asignar Actividades -->
     <div class="modal-assign hidden" id="modal-assign">
       <div class="modal-content assign-modal-content">
